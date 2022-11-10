@@ -1,0 +1,83 @@
+@use "../../style/partials/style.scss";
+
+.Card {
+    border: 1px black solid;
+    margin: 20px;
+    background-color: white;
+    box-shadow: 8px 8px rgb(176, 168, 150);
+}
+
+.Image {
+    border: 1px solid black;
+    margin: 10px;
+    background-image: url("https://wallup.net/wp-content/uploads/2016/05/24/143432-nature-Pokemon.jpg");
+    background-size: 350px;
+    box-shadow: 5px 5px rgb(219, 212, 212);
+}
+
+.Info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.Types {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    margin: 10px;
+}
+
+.Type {
+    border: 1px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.Top {
+    display: flex;
+}
+
+.Bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 30px;
+}
+
+.PlusMinus {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: large;
+    align-items: center;
+}
+
+.Plus {
+    border: 2px solid black;
+}
+
+.List {
+    list-style: none;
+    margin-left: 10px;
+}
+
+.Item {
+    background-color: aliceblue;
+    border: 1px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 5px;
+    box-shadow: 3px 3px rgb(219, 212, 212);
+}
+
+.More {
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+}

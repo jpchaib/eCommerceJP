@@ -1,0 +1,21 @@
+.Bar {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: flex-start;
+    background-color: red;
+    border: 1px solid black;
+}
+
+.Link {
+    color: white;
+    font-size: larger;
+    margin-left: 1em;
+    padding: 0/25em;
+    text-decoration: none;
+    margin-left: 30px;
+    &:hover {
+        text-decoration: underline;
+        color: black;
+    }
+}

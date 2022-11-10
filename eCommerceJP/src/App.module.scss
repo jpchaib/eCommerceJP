@@ -1,0 +1,26 @@
+@use "./style/partials/style.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: roboto;
+}
+
+.App {
+    text-shadow: 0 1px 1px hsl(0 0% 0% / 20%);
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.ImageContainer {
+    width: 100vw;
+    text-align: center;
+    background-color: white;
+}
+
+.Image {
+    width: 400px;
+}
