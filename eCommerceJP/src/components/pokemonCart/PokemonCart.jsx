@@ -1,12 +1,14 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import UserContext from "../loginContext/UserContext";
 import { deletePokemonById } from "../../services/collection/pokemonsDb";
 import { calcPokePriceCart } from "../../services/pokemons/pokemons";
 import style from "./PokemonCart.module.scss";
 
 const PokemonCart = ({ refresh, setRefresh, pokemon }) => {
+    const [user, setUser] = useContext(UserContext);
     const navigate = useNavigate();
     const [price, setPrice] = useState(0);
     const [info, setInfo] = useState({
@@ -25,7 +27,6 @@ const PokemonCart = ({ refresh, setRefresh, pokemon }) => {
         types: [],
         qty: 0,
     });
-
     const pokename = pokemon.name;
 
     Object.keys(info).forEach((key) => {
@@ -46,7 +47,7 @@ const PokemonCart = ({ refresh, setRefresh, pokemon }) => {
     }, []);
 
     const handleClick = (event) => {
-        deletePokemonById(pokemon.name).then(() => setRefresh(!refresh));
+        deletePokemonById(user.uid, pokemon.name).then(() => setRefresh(!refresh));
         console.log("Pokemon deleted");
     };
 

@@ -1,11 +1,13 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import { calcPokePrice } from "../../services/pokemons/pokemons";
 import { addPokemon } from "../../services/collection/pokemonsDb";
+import UserContext from "../loginContext/UserContext";
 import style from "./PokemonCard.module.scss";
 
 const PokemonCard = ({ pokemon }) => {
+    const [user, setUser] = useContext(UserContext);
     const navigate = useNavigate();
     const [price, setPrice] = useState(0);
     const [info, setInfo] = useState({
@@ -42,7 +44,7 @@ const PokemonCard = ({ pokemon }) => {
     const handleAdd = (event) => {
         if (info.qty !== 0) {
             console.log("clicked");
-            addPokemon(info).then(() => navigate("/cart/"));
+            addPokemon(user.uid, info).then(() => navigate("/cart/"));
         }
     };
 

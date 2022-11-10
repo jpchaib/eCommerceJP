@@ -1,0 +1,17 @@
+@use "../../style/partials/style.scss";
+
+.Title {
+    color: rgb(255, 111, 0);
+    font-weight: bolder;
+    text-align: center;
+    text-shadow: 2px 2px black;
+    font-size: 70px;
+    margin: 20px;
+    font-family: Marhey;
+}
+
+.Para {
+    text-align: center;
+    font-size: 20px;
+    margin: 20px;
+}

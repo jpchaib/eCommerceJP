@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import UserContext from "../loginContext/UserContext";
 import { getPokemonsCart } from "../../services/collection/pokemonsDb";
 import PokemonCart from "../pokemonCart/PokemonCart";
 import style from "./Cart.module.scss";
 
 const Cart = () => {
+    const [user, setUser] = useContext(UserContext);
     const [refresh, setRefresh] = useState(false);
     const [pokemons, setPokemons] = useState([]);
 
     useEffect(() => {
-        getPokemonsCart().then((pokemons) => setPokemons(pokemons));
+        getPokemonsCart(user.uid).then((pokemons) => setPokemons(pokemons));
     }, [refresh]);
 
     return (
